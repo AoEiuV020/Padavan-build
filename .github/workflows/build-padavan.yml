@@ -34,6 +34,8 @@ jobs:
         TNAME: RM2100
       run: |
         cd /opt/rt-n56u/trunk
+        # fixup
+        sed -i 's/SRC_URL = .*/SRC_URL = https:\/\/github.com\/hanwckf\/rt-n56u\/raw\/master\/trunk\/user\/htop\/htop-3.0.2.tar.gz/' user/htop/Makefile
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
